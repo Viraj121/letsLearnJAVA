@@ -1,0 +1,51 @@
+//find largest sum of sub array
+//kadane's algorithm
+class SumSubArray{
+  public static void main (String[] args) {
+    int a[]={4,-2,-3,4,-1,-2,1,5,-3};
+    
+    int max_so_far=Integer.MIN_VALUE;
+    int min_ending_here=0;//to add the elements in array
+    
+    int start=0,end=0,s=0;
+    for (int i=0;i<a.length ;i++ ){
+      
+      min_ending_here=min_ending_here+a[i];
+      
+      if (max_so_far<min_ending_here){
+        max_so_far=min_ending_here;
+        start=s;
+        end=i;
+      }
+      
+      if (min_ending_here<0){
+        min_ending_here=0;
+        s=i+1;
+      } 
+    }
+    
+    System.out.println(max_so_far);
+    
+    System.out.println("start index position is "+start+ "\nend index position is "+end);
+  }
+}
+
+
+
+
+class InsertElement{
+  public static void main (String[] args) {
+    int a[]={2,4,6,8,9,10};
+    
+    int pos=3;
+    int element =100;
+    
+    for (int i=a.length-1; i>pos-1 ;i--){
+       a[i]=a[i-1];
+    }
+    a[pos-1]=element;
+    
+   for (int no:a ) 
+    System.out.println(no );
+  }
+}

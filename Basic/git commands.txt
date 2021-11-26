@@ -1,0 +1,9 @@
+git add -A :to add all the files at ones 
+git checkout -f : to go previous changes of all the files before you have commited the files.
+git status
+git log
+git addgit commit -m
+git log -p -1:to see the last commited you hae done.
+git diff
+git diff --staged
+git -a -m"": to skip staging area

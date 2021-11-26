@@ -1,0 +1,96 @@
+//this code will only work if the array does not have duplicae element in its own array
+
+// import java.util.HashSet;
+// class CommonElement{
+//   public static void main (String[] args) {
+//     int a[]={4,5,6,7,1,4};
+    
+//     int b[]={4,8,9,0,1,1};
+    
+//     HashSet<Integer> hs =new HashSet<>();
+    
+//     for (int no:a){
+//       hs.add(no);
+//     } 
+    
+//     for (int no:b ){
+//     boolean k= hs.add(no);
+     
+//     if (k==false){
+//       System.out.println(no);
+//     } 
+//     } 
+    
+//   }
+// }
+
+//if it has duplicate elements in its own array.
+
+import java.util.HashSet;
+class CommonElement{
+  public static void main (String[] args) {
+    int a[]={4,5,6,7,1,4,5};
+    
+    int b[]={4,8,9,0,1,1};
+    
+    HashSet<Integer> hs1 =new HashSet<>();
+    HashSet<Integer> hs2 =new HashSet<>();
+    
+    for(int no:a){
+      hs1.add(no);
+    }
+    
+    for (int no:b ){
+      hs2.add(no);
+    }
+    
+    for(int no:hs2){
+     boolean k= hs1.add(no);
+     
+     if (k==false) {
+       System.out.println(no);
+     }
+    }
+    
+  }
+}
+
+
+
+//all the arrays are sorted from which common element have to find out.
+import java.util.ArrayList;
+class CommonElementOf3Array{
+  public static void main (String[] args) {
+    int a[]={1,3,4,6,7,9,10};
+    
+    int b[]={1,2,3,10,14};
+    
+    int c[]={1,3,10,40};
+    
+    int x=0,y=0,z=0;
+    //start comparing from 0th element 
+    ArrayList<Integer> al =new ArrayList<>();
+    while(x<a.length && y<b.length && z<c.length){
+      if (a[x]==b[y] && b[y]==c[z]){
+        al.add(a[x]);
+        x++;
+        y++;
+        z++;
+      }
+      else if(a[x]<b[y]){
+        x++;
+      }
+      
+      else if (b[y]<c[z]){
+        y++;
+      } 
+      else{
+        z++;
+      }
+    }
+    
+    for (int no:al ){
+      System.out.println(no);
+    } 
+    }
+}
